@@ -1,0 +1,138 @@
+body{
+    margin: 0;
+    font-size: 60px;
+}
+
+.wrapper{
+    background-color: plum;
+    min-height: 80vh;
+    padding: 16px;
+
+    /* Grid System */
+    display: grid;
+    /* rowGap, columnGap */
+    gap: 20px 10px;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; This row and the next one is the same*/
+    /* grid-template-columns: repeat(4,1fr); */
+    /* grid-template-columns: 2fr 1fr 50px; */
+    /* grid-template-columns: 20% 2fr 1fr 50px; */
+
+
+    /* 1st: 50px, 2nd:20%, third colum min-max, last fr will be calculated */
+    /* grid-template-columns: 20% 2fr minmax(120px,20%) 50px; */
+
+    /* grid-template-rows: auto; */
+    /* grid-template-columns: 20px,20px,20px,20px;
+    grid-template-rows: auto; */
+    grid-template-areas: 
+    "item1 item2 item3"
+    "item8 item8 item9"
+    "item5 item6 item6"
+    "item5 item6 item6"
+    "item5 item7 item4"; 
+}
+
+.wrapper > div{
+    background-color: rgb(219, 241, 19);
+    color: white;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.item-1{
+    /* grid row start row 2 end row3 */
+    /* grid-row: 2/3; */
+
+    /* grid column start column 3 column4 */
+    /* grid-column: 3/4; */
+    grid-area: item1;
+}
+
+.item-2{
+    grid-area: item2;
+}
+
+.item-3{
+    grid-area: item3;
+}
+
+.item-4{
+ grid-area: item4;
+}
+
+.item-5{
+    grid-area: item5;
+}
+
+.item-6{
+    grid-area: item6;
+}
+
+.item-7{
+    grid-area: item7;
+}
+
+.item-8{
+    grid-area: item8;
+}
+.item-9{
+    grid-area: item9;
+}
+
+
+.circle{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: red;
+    margin: 30px auto;
+    display: none;
+}
+
+/* media query */
+/* max 768px*/
+/* max 576px */
+
+
+@media (max-width: 768px) {
+    .wrapper{
+        /* display: grid; */
+        gap: 10px;
+        grid-template-areas: 
+        "item1 item1"
+        "item2 item3"
+        "item4 item4"
+        "item5 item6"
+        "item7 item7"
+        "item8 item9"
+        ; 
+    }
+
+    .circle{
+        display: block;
+    }
+        
+}
+
+@media (max-width: 576px)
+{
+    .wrapper{
+    grid-template-areas: 
+    "item1"
+    "item2"
+    "item3"
+    "item4"
+    "item5"
+    "item6"
+    "item7"
+    "item8"
+    "item9" ;
+    }
+
+    .circle{
+        display: ;
+    }
+    
+}
